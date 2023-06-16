@@ -27,6 +27,10 @@
             text-align: center;
         }
 
+        #form {
+            display: none
+        }
+
         h1 {
             margin-top: 50px;
             margin-bottom: 10px;
@@ -81,12 +85,12 @@
     let buy = document.getElementById("buy");
     let order = document.getElementById("order");
 
-    buy.addEventListener("click", ()=>{
+    buy.addEventListener("click", () => {
         document.getElementById("main").style.display = "none";
         document.getElementById("form").style.display = "block";
-        document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name+" "+th.initDataUnsafe.user.last_name;
+        document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + th.initDataUnsafe.user.last_name;
     });
-    order.addEventListener("click",()=>{
+    order.addEventListener("click", () => {
         tg.close();
     });
 </script>

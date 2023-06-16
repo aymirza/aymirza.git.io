@@ -116,6 +116,7 @@
         let name = document.getElementById("user_name").value;
         let email = document.getElementById("user_email").value;
         let phone = document.getElementById("user_phone").value;
+        let qid = tg.queryId;
         if (name.length < 5) {
             document.getElementById("error").innerText = 'Ошибка в имени';
             return;
@@ -131,7 +132,8 @@
         let data = {
             name: name,
             email: email,
-            phone: phone
+            phone: phone,
+            qid: qid
         }
         tg.sendData(JSON.stringify(data));
         tg.close();

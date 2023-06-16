@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
+        }
+
+        #main {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 70px;
+            margin: 30px auto;
+        }
+
+        p {
+            width: 350px;
+            margig: 0 auto;
+        }
+
+        button {
+            border: 0;
+            border-radius: 5px;
+            margin-top: 50px;
+            height: 60px;
+            width: 200px;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 500ms ease;
+            color: var(--tg-theme-button-color);
+            background: var(--tg-theme-button-text-color);
+        }
+
+        button:hover {
+            background: var(--tg-theme-secondary-text-color);
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <h1>Онлайн Магазин</h1>
+    <img src="1.webp" width="200px">
+    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid autem exercitationem expedita impedit incidunt inventore iusto libero maxime nostrum officia placeat, provident quos reiciendis tenetur voluptates. Dignissimos laboriosam repudiandae ut!</span><span>Adipisci alias culpa cum facere ipsa necessitatibus tempore ut voluptates? Aut doloremque ducimus in pariatur voluptatum. Amet ducimus in, minus nam necessitatibus numquam omnis optio, perspiciatis quod reiciendis sequi vero!</span>
+    </p>
+    <button id="buy">Купить</button>
+</div>
+<form id="form">
+    <input type="text" placeholder="Имя" id="user_name">
+    <input type="text" placeholder="Email" id="user_email">
+    <input type="text" placeholder="Телефон" id="user_phone">
+    <button id="order">Оформить</button>
+</form>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+    let tg = window.Telegram.WebApp;
+    let buy = document.getElementById("buy");
+    let order = document.getElementById("order");
+
+    buy.addEventListener("click", ()=>{
+        document.getElementById("main").style.display = "none";
+        document.getElementById("form").style.display = "block";
+        document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name+" "+th.initDataUnsafe.user.last_name;
+    });
+    order.addEventListener("click",()=>{
+        tg.close();
+    });
+</script>
+</body>
+</html>
